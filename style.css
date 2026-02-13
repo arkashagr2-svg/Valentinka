@@ -271,7 +271,7 @@ body {
   transition:
     transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) 0.4s,
     opacity 0.6s ease 0.4s;
-  z-index: 2;
+  z-index: 4; /* фотка поверх клапана при открытии */
 }
 
 .envelope-photo img {
