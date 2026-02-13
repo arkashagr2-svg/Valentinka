@@ -132,11 +132,11 @@ function startEmojiRain() {
 function startFloatingPhotos() {
   if (!floatingPhotosContainer) return;
 
-  // Используем все фото вида images/photo1.jpg ... images/photo46.jpg
+  // Используем все фото вида image/photo1.jpg ... image/photo46.jpg
   const totalPhotos = 46;
   const photoSources = [];
   for (let i = 1; i <= totalPhotos; i += 1) {
-    photoSources.push(`images/photo${i}.jpg`);
+    photoSources.push(`image/photo${i}.jpg`);
   }
 
   const total = 10;
