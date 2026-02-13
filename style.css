@@ -364,6 +364,8 @@ body {
   height: 60px;
   border-radius: 12px;
   overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
   animation: float-photo 10s linear infinite;
   box-shadow: 0 6px 14px rgba(51, 0, 51, 0.32);
 }
@@ -416,12 +418,24 @@ body {
 @keyframes float-photo {
   0% {
     transform: translate3d(0, 110vh, 0) rotate(0deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+  2% {
+    opacity: 1;
+    visibility: visible;
   }
   50% {
     transform: translate3d(10vw, 40vh, 0) rotate(8deg);
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
   }
   100% {
     transform: translate3d(-10vw, -20vh, 0) rotate(-10deg);
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
