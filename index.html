@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Валентинка 💘</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="bg-music" loop>
+      <!-- Можешь заменить src на свой файл или удалить аудио, если не нужно -->
+      <source src="" type="audio/mpeg" />
+    </audio>
+
+    <div class="page page-main active" id="page-main">
+      <div class="background-hearts"></div>
+      <div class="card">
+        <div class="card-header">
+          <span class="tag">Вопрос века</span>
+        </div>
+        <h1 class="question">Ты любишь меня? <span class="heart">❤️</span></h1>
+        <p class="subtitle">
+          Отвечай честно, но помни что нагадала гадалка
+        </p>
+
+        <div class="attempts">
+          <span>Попыток нажать «НЕТ»:</span>
+          <span id="attempt-count" class="attempt-count">0</span>
+        </div>
+
+        <p id="fun-message" class="fun-message">
+          Попробуй нажать «НЕТ»… если сможешь 😈
+        </p>
+
+        <div class="buttons">
+          <button id="yes-btn" class="btn yes">ДА 💖</button>
+          <button id="no-btn" class="btn no">НЕТ 🙅‍♀️</button>
+        </div>
+
+        <button id="music-toggle" class="music-toggle" aria-label="Переключить музыку">
+          🔈 Музыка выкл
+        </button>
+      </div>
+    </div>
+
+    <div class="page page-yes" id="page-yes">
+      <div class="background-hearts"></div>
+      <div class="card card-yes">
+        <div class="envelope-wrapper">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-photo" id="envelope-photo">
+              <!-- ЗАМЕНИ src НА СВОЮ ФОТОГРАФИЮ -->
+              <img src="images/main-photo.jpg" alt="Мы" />
+            </div>
+          </div>
+        </div>
+
+        <div class="yes-text" id="yes-text">
+          <h1 class="question big">
+            Я знал(а)! 💘
+          </h1>
+          <p class="subtitle">
+            Официально объявляю тебя самым любимым человечком на этой планете 💫
+          </p>
+
+          <p class="confession">
+            Спасибо, что ты есть.  
+            С этого момента у тебя нет пути назад — только обнимашки, мемы,
+            совместные сериалы и очень много любви.  
+            Считай, что ты подписался(ась) на пожизненную подписку «мы» 💞
+          </p>
+
+          <p class="signature">
+            Твоя(ой) <span class="heart">❤️</span>
+          </p>
+
+          <button id="back-btn" class="btn back">
+            Ещё раз посмотреть вопрос 😉
+          </button>
+        </div>
+      </div>
+
+      <div id="emoji-rain-container"></div>
+      <div id="floating-photos-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
