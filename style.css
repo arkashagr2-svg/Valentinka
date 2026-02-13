@@ -61,6 +61,7 @@ body {
     0 0 0 1px rgba(255, 255, 255, 0.6);
   text-align: center;
   backdrop-filter: blur(20px);
+  z-index: 2; /* карточка поверх фоновых фото */
 }
 
 .card::before {
@@ -216,8 +217,8 @@ body {
 .envelope-wrapper {
   display: flex;
   justify-content: center;
-  margin-bottom: 18px;
-  margin-top: 6px;
+  margin-bottom: 8px;
+  margin-top: -8px; /* чуть выше, ближе к верхней рамке */
 }
 
 .envelope {
@@ -284,7 +285,8 @@ body {
 }
 
 .envelope.open .envelope-photo {
-  transform: translateY(-75px) scale(1.02);
+  /* поднимаем фотку выше, чтобы она выходила над розовой рамкой */
+  transform: translateY(-110px) scale(1.05);
   opacity: 1;
 }
 
@@ -338,13 +340,13 @@ body {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  z-index: 4;
+  z-index: 1; /* под карточкой, но над общим фоном */
 }
 
 .floating-photo {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 12px;
   overflow: hidden;
   opacity: 0;

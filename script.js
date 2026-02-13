@@ -139,7 +139,8 @@ function startFloatingPhotos() {
     photoSources.push(`image/photo${i}.JPG`);
   }
 
-  const total = 10;
+  // Чуть больше одновременных фото, но всё ещё без лагов
+  const total = 8;
 
   for (let i = 0; i < total; i += 1) {
     const wrapper = document.createElement('div');
@@ -149,8 +150,12 @@ function startFloatingPhotos() {
     img.src = photoSources[i % photoSources.length];
     img.alt = 'Наши моменты';
 
-    const delay = Math.random() * 6;
-    const size = 40 + Math.random() * 20;
+    // Случайная задержка, чтобы поток был непрерывным
+    const delay = Math.random() * 4;
+    // Базовый размер увеличен (~в 4 раза от исходного)
+    const baseSize = 50;
+    const randomExtra = Math.random() * 25;
+    const size = (baseSize + randomExtra) * 4;
     const startX = Math.random() * 100;
 
     wrapper.style.left = `${startX}vw`;
