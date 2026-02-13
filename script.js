@@ -139,8 +139,11 @@ function startFloatingPhotos() {
     photoSources.push(`image/photo${i}.JPG`);
   }
 
-  // Чуть больше одновременных фото, но всё ещё без лагов
+  // Количество одновременных фото
   const total = 8;
+
+  // Фиксированные "дорожки" по ширине, чтобы фото меньше пересекались
+  const lanes = [8, 20, 32, 44, 56, 68, 80, 92];
 
   for (let i = 0; i < total; i += 1) {
     const wrapper = document.createElement('div');
@@ -150,15 +153,17 @@ function startFloatingPhotos() {
     img.src = photoSources[i % photoSources.length];
     img.alt = 'Наши моменты';
 
-    // Случайная задержка, чтобы поток был непрерывным
-    const delay = Math.random() * 4;
+    // Небольшая индивидуальная задержка, чтобы поток был непрерывным
+    const delay = i * 0.7 + Math.random() * 0.8;
     // Базовый размер увеличен (~в 4 раза от исходного)
-    const baseSize = 50;
-    const randomExtra = Math.random() * 25;
-    const size = (baseSize + randomExtra) * 4;
-    const startX = Math.random() * 100;
+    const baseSize = 35;
+    const randomExtra = Math.random() * 20;
+    const size = (baseSize + randomExtra) * 3.5;
 
-    wrapper.style.left = `${startX}vw`;
+    const laneIndex = i % lanes.length;
+    const laneX = lanes[laneIndex] + (Math.random() * 4 - 2); // лёгкий разброс
+
+    wrapper.style.left = `${laneX}vw`;
     wrapper.style.animationDelay = `${delay}s`;
     wrapper.style.animationDuration = `${10 + Math.random() * 6}s`;
     wrapper.style.width = `${size}px`;
