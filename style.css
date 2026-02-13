@@ -327,6 +327,15 @@ body {
   background: #ffe8f3;
 }
 
+.btn.back.back-top {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  padding: 6px 14px;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(51, 0, 51, 0.18);
+}
+
 #emoji-rain-container {
   position: fixed;
   inset: 0;
